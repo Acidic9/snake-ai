@@ -111,6 +111,7 @@ export class Snake {
 			// this.p.map(this.x, 0, this.p.width, 0, 1),
 			// this.p.map(this.y, 0, this.p.height, 0, 1),
 		]
+		console.log(inputs)
 
 		// const inputs = this.getInputs()
 		// inputs.push(this.p.map(this.x, 0, this.p.width, 0, 1))
