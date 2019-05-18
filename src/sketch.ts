@@ -19,6 +19,7 @@ declare global {
 window.LOAD_BRAINS = true
 window.SAVE_BRAINS = true
 
+//
 window.GENERATION_LIFETIME = Infinity
 window.GENERATION_MAX_UPDATES = 400
 window.FRAME_RATE = 500
