@@ -26,12 +26,12 @@ export class Snake {
 	) {
 		this.pickLocation()
 		if (!brain) {
-			this.brain = new NeuralNetwork(6, 25, 3)
+			this.brain = new NeuralNetwork(2704, 80, 3)
 		} else {
 			if (brain instanceof NeuralNetwork) {
 				this.brain = brain.copy()
 			} else {
-				this.brain = new NeuralNetwork(brain, 6, 25, 3)
+				this.brain = new NeuralNetwork(brain, 2704, 80, 3)
 			}
 		}
 	}
@@ -97,26 +97,26 @@ export class Snake {
 	}
 
 	public think() {
-		const inputs = [
-			Number(!this.isItClearStraightAhead()),
-			Number(!this.isItClearLeft()),
-			Number(!this.isItClearRight()),
-			Number(this.isFoodStraightAhead()),
-			Number(this.isFoodLeft()),
-			Number(this.isFoodRight()),
-			// this.foodDirectionX(),
-			// this.foodDirectionY(),
-			// this.p.map(this.food.x, 0, this.p.width, 0, 1),
-			// this.p.map(this.food.y, 0, this.p.height, 0, 1),
-			// this.p.map(this.x, 0, this.p.width, 0, 1),
-			// this.p.map(this.y, 0, this.p.height, 0, 1),
-		]
+		// const inputs = [
+		// 	Number(!this.isItClearStraightAhead()),
+		// 	Number(!this.isItClearLeft()),
+		// 	Number(!this.isItClearRight()),
+		// 	Number(this.isFoodStraightAhead()),
+		// 	Number(this.isFoodLeft()),
+		// 	Number(this.isFoodRight()),
+		// 	// this.foodDirectionX(),
+		// 	// this.foodDirectionY(),
+		// 	// this.p.map(this.food.x, 0, this.p.width, 0, 1),
+		// 	// this.p.map(this.food.y, 0, this.p.height, 0, 1),
+		// 	// this.p.map(this.x, 0, this.p.width, 0, 1),
+		// 	// this.p.map(this.y, 0, this.p.height, 0, 1),
+		// ]
 
-		// const inputs = this.getInputs()
-		// inputs.push(this.p.map(this.x, 0, this.p.width, 0, 1))
-		// inputs.push(this.p.map(this.y, 0, this.p.height, 0, 1))
-		// inputs.push(this.p.map(this.xspeed, -1, 1, 0, 1))
-		// inputs.push(this.p.map(this.xspeed, -1, 1, 0, 1))
+		const inputs = this.getInputs()
+		inputs.push(this.p.map(this.x, 0, this.p.width, 0, 1))
+		inputs.push(this.p.map(this.y, 0, this.p.height, 0, 1))
+		inputs.push(this.p.map(this.xspeed, -1, 1, 0, 1))
+		inputs.push(this.p.map(this.xspeed, -1, 1, 0, 1))
 
 		const output = this.brain.predict(inputs)
 

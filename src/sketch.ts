@@ -20,12 +20,12 @@ window.LOAD_BRAINS = true
 window.SAVE_BRAINS = true
 
 window.GENERATION_LIFETIME = Infinity
-window.GENERATION_MAX_UPDATES = 200
+window.GENERATION_MAX_UPDATES = 400
 window.FRAME_RATE = 500
 window.SHOW_ALL_SNAKES = false
 window.MODEL_SAVE_INTERVAL = 60000
 const SAVE_PREFIX = ''
-const POPULATION = 80
+const POPULATION = 50
 const scl = 20
 let speed = 1
 let lastGenerationStart = 0
