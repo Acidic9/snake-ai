@@ -60,7 +60,7 @@ const highScoreGenerationEl = document.getElementById(
 ) as HTMLParagraphElement
 
 const setup = (p: p5) => () => {
-	tf.setBackend('cpu')
+	tf.setBackend('webgl')
 	p.createCanvas(600, 600)
 	for (let i = 0; i < POPULATION; ++i) {
 		snakes.push(new Snake(p, scl, loadedBrains[i]))
