@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<style>
+		html,
+		body {
+			margin: 0;
+			font-family: sans-serif;
+		}
+
+		body {
+			background-color: #333;
+			text-align: center;
+		}
+
+		.info-container {
+			display: flex;
+			flex-direction: column;
+			max-width: 600px;
+			margin: 40px auto;
+			color: #FFF;
+			text-align: left;
+		}
+
+		.info-container div {
+			display: flex;
+			justify-content: space-between;
+			font-weight: bold;
+			margin-bottom: 6px;
+			letter-spacing: 1px;
+		}
+
+		.info-container div span {
+			font-weight: normal;
+			font-family: monospace;
+		}
+
+		canvas {
+			border: 2px solid #FFF;
+		}
+
+		.clear-local-storage {
+			color: #FFF;
+			font-style: italic;
+			text-align: right;
+			max-width: 600px;
+			margin: 0 auto;
+			opacity: 0.5;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+
+		.clear-local-storage:hover {
+			text-decoration: underline;
+			opacity: 0.8;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="info-container">
+		<div>Generation: <span id="generation">0</span></div>
+		<div>Alive: <span id="alive">0</span></div>
+		<div>High Score (ever): <span id="high-score-total">0</span></div>
+		<div>High Score (current generation): <span id="high-score-generation">0</span></div>
+	</div>
+
+	<script src="./js/bundle.js"></script>
+</body>
+
+</html>
